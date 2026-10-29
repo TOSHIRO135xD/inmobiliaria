@@ -151,11 +151,11 @@ class Inmueble(models.Model):
 
     def pausar(self):
         self.estado = self.EstadoInmueble.INACTIVO
-        self.save(update_fields=["estado"])
+        self.save(update_fields=["estado", "fecha_actualizacion"])
 
     def marcar_como_arrendado(self):
         self.estado = self.EstadoInmueble.ARRENDADO
-        self.save(update_fields=["estado"])
+        self.save(update_fields=["estado", "fecha_actualizacion"])
 
     def __str__(self):
         return self.titulo
